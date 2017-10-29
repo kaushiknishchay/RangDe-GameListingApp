@@ -1,0 +1,31 @@
+.search-box, .search-result, .search-blank {
+  margin: 4px 0;
+}
+
+.content {
+  min-height: 100%;
+}
+
+
+footer {
+  padding: 40px 20px;
+  background: #222;
+  color: #ddd;
+  height:50px;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: static;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+footer > a {
+  text-decoration: none;
+  color: #dddddd;
+  font-weight: bold;
+}
+footer > a:hover{
+  color: darkorchid;
+}

@@ -1,0 +1,15 @@
+.search-box > mat-form-field {
+  /*width: 100%;*/
+}
+
+.search-input {
+  width: 50%;
+}
+
+.sort-score, .sort-platform {
+  width: 20%;
+}
+.search-box, .search-result, .search-blank {
+  margin: 4px 0;
+}
+

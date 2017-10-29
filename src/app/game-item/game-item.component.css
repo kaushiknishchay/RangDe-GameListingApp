@@ -1,0 +1,22 @@
+.game-item {
+  margin: 5px;
+}
+.game-title{
+  font-size: 16px;
+  font-weight: bold;
+}
+.game-sub-info{
+  font-size: 15px;
+}
+.editors-choice {
+  float: right;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+.score-star {
+  font-size: 15px;
+  line-height: 15px;
+  color: goldenrod;
+}

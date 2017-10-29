@@ -1,0 +1,43 @@
+<mat-card class="search-box">
+
+  <mat-form-field class="search-input" color="accent">
+
+    <input [(ngModel)]="searchText" matInput placeholder="Search for game" type="search"
+           (keyup)="updateSearchText(searchText)">
+
+  </mat-form-field>
+
+  <mat-form-field class="sort-score">
+
+    <mat-select placeholder="Sort By" [(ngModel)]="sortValue" (change)="updateScoreOrder(sortValue)">
+
+      <mat-option *ngFor="let sort of sortBys" [value]="sort">
+        {{ sort.viewValue }}
+      </mat-option>
+
+    </mat-select>
+
+  </mat-form-field>
+
+  <mat-form-field class="sort-platform">
+
+    <mat-select placeholder="Select Platform" [(ngModel)]="sortPlatform" (change)="updatePlatform(sortPlatform)">
+
+      <mat-option>All</mat-option>
+
+      <mat-option *ngFor="let platform of platFormList" [value]="platform">
+        {{ platform }}
+      </mat-option>
+
+    </mat-select>
+
+  </mat-form-field>
+
+
+  <p>Api Rate Limit: {{ apiLimit['api_rate_limit'] }}</p>
+
+  <div class="search-result" *ngIf="searchText!= undefined && searchText.length>=1">
+    Search Results for <b>"{{ searchText }}"</b>.
+  </div>
+
+</mat-card>

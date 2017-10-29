@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">{{ title }}</mat-toolbar>
+<div class="content">
+  <div style="max-width: 70%; margin: 0 auto!important;">
+
+    <search-input [gamesData]="gamesData" [platFormList]="platformList" [apiLimit]="apiLimit"
+                  (messageEvent)="messageRespond($event)"></search-input>
+
+    <mat-card class="search-blank"
+              *ngIf="!isLoading && (gamesData | filterGames:sortPlatform | searchGames:searchText)?.length==0">
+      No results found.
+    </mat-card>
+
+  </div>
+  <div style="max-width: 60%; margin: 0 auto!important;">
+    <p *ngIf="isLoading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </p>
+    <game-item
+      *ngFor="let game of gamesData | filterGames:sortPlatform | searchGames:searchText | sortGames: {sortBy: 'score', direction: sortValue.order} "
+      [gameItem]="game"></game-item>
+  </div>
+</div>
+<footer>
+  <a href="http://kaushik.tech">kaushik.tech</a>
+</footer>
